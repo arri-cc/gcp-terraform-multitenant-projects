@@ -30,3 +30,5 @@ override.tf.json
 
 #local test backend config
 backend.config.local
+
+.terraform.lock.hcl
