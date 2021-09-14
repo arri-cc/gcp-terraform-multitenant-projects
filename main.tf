@@ -5,12 +5,13 @@ terraform {
 }
 
 resource "google_cloud_run_service" "default" {
-  name     = "tenant-${tenant}-service"
-
+  name     = "tenant-${var.tenant}-service"
+  location = var.region
+  project = var.project
   template {
     spec {
       containers {
-        image = "gcr.io/google-samples/${container_name}:${container_tag}"
+        image = "gcr.io/google-samples/${var.container_name}:${var.container_tag}"
       }
     }
   }
@@ -19,4 +20,8 @@ resource "google_cloud_run_service" "default" {
     percent         = 100
     latest_revision = true
   }
+}
+
+output "service_url" {
+  value = google_cloud_run_service.default.url
 }

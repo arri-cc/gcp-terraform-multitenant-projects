@@ -1,3 +1,5 @@
-container_name = "hello"
+container_name = "hello-app"
 container_tag  = "1.0"
+project        = "arri-primary"
+region         = "us-east4"
 tenant         = "bojackson"
