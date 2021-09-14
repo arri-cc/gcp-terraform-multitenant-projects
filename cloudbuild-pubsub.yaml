@@ -1,0 +1,38 @@
+steps:
+  - name: "ubuntu"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        sed -i -e s/#CONTAINER_NAME/${_CONTAINER_NAME}/g vars.tfvars
+        sed -i -e s/#CONTAINER_TAG/${_CONTAINER_TAG}/g vars.tfvars
+        sed -i -e s/#PROJECT/${_PROJECT}/g vars.tfvars
+        sed -i -e s/#REGION/${_REGION}/g vars.tfvars
+        sed -i -e s/#TENANT/${_TENANT}/g vars.tfvars
+        sed -i -e s/#BUCKET/${_BUCKET}/g backend.config
+        sed -i -e s/#TENANT/${_TENANT}/g backend.config
+  - id: "tf init"
+    name: "hashicorp/terraform:0.15.5"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - "terraform init --backend-config=backend.config"
+  - id: "tf plan"
+    name: "hashicorp/terraform:0.15.5"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - "terraform plan --var-file=vars.tfvars --out=tf.plan"
+  - id: "tf apply"
+    name: "hashicorp/terraform:0.15.5"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - "terraform apply tf.plan"
+substitutions:
+  _BUCKET: $(body.message.data.bucket)
+  _CONTAINER_NAME: $(body.message.data.container_name)
+  _CONTAINER_TAG: $(body.message.data.container_tag)
+  _PROJECT: $(body.message.data.project)
+  _REGION: $(body.message.data.region)
+  _TENANT: $(body.message.data.tenant)
