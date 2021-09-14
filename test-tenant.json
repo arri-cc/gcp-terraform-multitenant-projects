@@ -1,0 +1,8 @@
+{
+    "bucket": "arri-tenant-states",
+    "container_name": "hello-app",
+    "container_tag": "2.0",
+    "project": "arri-primary",
+    "region": "us-east4",
+    "tenant": "RonBurgundy"
+}
