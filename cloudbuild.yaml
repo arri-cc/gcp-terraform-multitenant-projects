@@ -6,15 +6,16 @@ steps:
   args:
   - bash
   - |
-      sed -i -e s/#CONTAINER_NAME/_CONTAINER_NAME/g vars.tfvars
-      sed -i -e s/#CONTAINER_TAG/_CONTAINER_TAG/g vars.tfvars
-      sed -i -e s/#PROJECT/_PROJECT/g vars.tfvars
-      sed -i -e s/#REGION/_REGION/g vars.tfvars
-      sed -i -e s/#TENANT/_TENANT/g vars.tfvars
-      sed -i -e s/#BUCKET/_BUCKET/g backend.config
-      sed -i -e s/#TENANT/_TENANT/g backend.config
-      cat vars.tfvars
-      cat backend.config
+      ls -a
+    # sed -i -e s/#CONTAINER_NAME/_CONTAINER_NAME/g vars.tfvars
+      # sed -i -e s/#CONTAINER_TAG/_CONTAINER_TAG/g vars.tfvars
+      # sed -i -e s/#PROJECT/_PROJECT/g vars.tfvars
+      # sed -i -e s/#REGION/_REGION/g vars.tfvars
+      # sed -i -e s/#TENANT/_TENANT/g vars.tfvars
+      # sed -i -e s/#BUCKET/_BUCKET/g backend.config
+      # sed -i -e s/#TENANT/_TENANT/g backend.config
+      # cat vars.tfvars
+      # cat backend.config
 # - id: 'tf init'
 #   name: 'hashicorp/terraform:0.15.5'
 #   entrypoint: 'sh'
