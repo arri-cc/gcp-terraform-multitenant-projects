@@ -5,6 +5,7 @@ steps:
 - name: 'ubuntu'
   entrypoint: bash
   args:
+  - '-c'
   - cat vars.tfvars
     # sed -i -e s/#CONTAINER_NAME/_CONTAINER_NAME/g vars.tfvars
       # sed -i -e s/#CONTAINER_TAG/_CONTAINER_TAG/g vars.tfvars
