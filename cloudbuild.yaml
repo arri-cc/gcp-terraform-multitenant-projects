@@ -3,8 +3,8 @@ steps:
 # to run a shell script; and
 # set env variables for its execution
 - name: 'ubuntu'
+  entrypoint: bash
   args:
-  - bash
   - ls
   - /workspace
     # sed -i -e s/#CONTAINER_NAME/_CONTAINER_NAME/g vars.tfvars
