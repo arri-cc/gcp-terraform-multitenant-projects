@@ -32,7 +32,7 @@ override.tf.json
 backend.config.local
 
 #ignore tfvars
-vars.tfvars
+vars.tfvars.local
 
 #ignore plan file
 tf.plan
