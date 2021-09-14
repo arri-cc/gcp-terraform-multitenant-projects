@@ -1,7 +1,4 @@
 steps:
-# Uses the ubuntu build step:
-# to run a shell script; and
-# set env variables for its execution
 - name: 'ubuntu'
   entrypoint: bash
   args:
@@ -33,12 +30,10 @@ steps:
   - '-c'
   - 'terraform apply tf.plan'
 substitutions:
-  _BUCKET: 'arri-tenant-states'
-  _CONTAINER_NAME: 'hello-app'
-  _CONTAINER_TAG: '2.0'
-  _PROJECT: 'arri-primary'
-  _REGION: 'us-east4'
-  _TENANT: 'worthington'
-#options:
-# logging: CLOUD_LOGGING_ONLY
+  _BUCKET: ''
+  _CONTAINER_NAME: ''
+  _CONTAINER_TAG: ''
+  _PROJECT: ''
+  _REGION: ''
+  _TENANT: ''
 
