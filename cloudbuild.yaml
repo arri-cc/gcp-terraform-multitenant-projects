@@ -25,7 +25,13 @@ steps:
   entrypoint: 'sh'
   args:
   - '-c'
-  - 'terraform plan --var-file=vars.tfvars'
+  - 'terraform plan --var-file=vars.tfvars --out=tf.plan'
+- id: 'tf apply'
+  name: 'hashicorp/terraform:0.15.5'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - 'terraform apply tf.plan'
 substitutions:
   _BUCKET: 'arri-tenant-states'
   _CONTAINER_NAME: 'hello-app'
