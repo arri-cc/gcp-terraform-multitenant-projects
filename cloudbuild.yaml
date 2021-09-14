@@ -27,7 +27,7 @@ steps:
   - '-c'
   - 'terraform plan --var-file=vars.tfvars'
 substitutions:
-  _BUCKET: 'arri-tenants-state'
+  _BUCKET: 'arri-tenant-states'
   _CONTAINER_NAME: 'hello-app'
   _CONTAINER_TAG: '1.0'
   _PROJECT: 'arri-primary'
