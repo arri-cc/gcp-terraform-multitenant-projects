@@ -35,10 +35,10 @@ steps:
 substitutions:
   _BUCKET: 'arri-tenant-states'
   _CONTAINER_NAME: 'hello-app'
-  _CONTAINER_TAG: '1.0'
+  _CONTAINER_TAG: '2.0'
   _PROJECT: 'arri-primary'
   _REGION: 'us-east4'
-  _TENANT: 'bojangles'
+  _TENANT: 'worthington'
 #options:
 # logging: CLOUD_LOGGING_ONLY
 
