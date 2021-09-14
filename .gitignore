@@ -30,3 +30,6 @@ override.tf.json
 
 #local test backend config
 backend.config.local
+
+#ignore tfvars
+*.tfvars
