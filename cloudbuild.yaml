@@ -14,8 +14,8 @@ steps:
       sed -i -e s/#TENANT/${_TENANT}/g vars.tfvars
       sed -i -e s/#BUCKET/${_BUCKET}/g backend.config
       sed -i -e s/#TENANT/${_TENANT}/g backend.config
-      cat vars.tfvars
       cat backend.config
+      cat vars.tfvars
 # - id: 'tf init'
 #   name: 'hashicorp/terraform:0.15.5'
 #   entrypoint: 'sh'
