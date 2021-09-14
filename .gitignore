@@ -33,3 +33,6 @@ backend.config.local
 
 #ignore tfvars
 vars.tfvars
+
+#ignore plan file
+tf.plan
